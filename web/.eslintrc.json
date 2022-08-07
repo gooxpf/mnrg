@@ -82,7 +82,8 @@
                 "default-param-last": "off",
                 "@typescript-eslint/default-param-last": "off",
                 /* turn off any only for storybook files */
-                "@typescript-eslint/no-explicit-any": "off"
+                "@typescript-eslint/no-explicit-any": "off",
+                "import/no-anonymous-default-export": "off"
             }
         }
     ]
