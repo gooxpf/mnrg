@@ -29,6 +29,8 @@
     "rules": {
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
+        "typescript-eslint/ban-types": "off",
+        "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": ["warn", {"extensions": [".tsx"]}],
         "import/extensions": [
             "error",
@@ -56,6 +58,32 @@
         }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "off",
-        "react/prop-types": "off"
-    }
+        "react/prop-types": "off",
+        "react/function-component-definition": 0,
+        "react/button-has-type": "off",
+        "react/jsx-no-useless-fragment": "off"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/reducer.*",
+                "**/reducers.*"
+            ],
+            "rules": {
+                "default-param-last": "off",
+                "@typescript-eslint/default-param-last": "off"
+            }
+        },
+        {
+            "files": [
+                "**/*.stories.*"
+            ],
+            "rules": {
+                "default-param-last": "off",
+                "@typescript-eslint/default-param-last": "off",
+                /* turn off any only for storybook files */
+                "@typescript-eslint/no-explicit-any": "off"
+            }
+        }
+    ]
 }

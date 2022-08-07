@@ -25,7 +25,9 @@
     "audit": "yarn audit",
     "audit:fix": "yarn audit fix",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix"
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
     "production": [
@@ -40,9 +42,20 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "@typescript-eslint/typescript-estree": "^5.32.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-import-resolver-typescript": "^3.4.0",
@@ -50,9 +63,23 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "sass": "^1.54.3"
+    "prop-types": "^15.8.1",
+    "sass": "^1.54.3",
+    "webpack": "^5.74.0"
   },
   "resolutions": {
     "nth-check": "^2.0.1"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }
