@@ -20,14 +20,18 @@
     "setup": "yarn install",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "test:all": "yarn run start & yarn run jest:run & yarn run cypress:run",
     "audit": "yarn audit",
     "audit:fix": "yarn audit fix",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "storybook": "start-storybook -p 6006 -s public",
-    "storybook:build": "build-storybook -s public"
+    "storybook:build": "build-storybook -s public",
+    "jest": "react-scripts test",
+    "jest:run": "react-scripts test --watchAll=false",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
   },
   "browserslist": {
     "production": [
@@ -56,6 +60,7 @@
     "@typescript-eslint/parser": "^5.32.0",
     "@typescript-eslint/typescript-estree": "^5.32.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cypress": "^10.4.0",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-import-resolver-typescript": "^3.4.0",
