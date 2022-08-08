@@ -1,0 +1,5 @@
+.app-modal {
+  @include mixOverLayerCentered(980);
+
+  background-color: $color-background-over-layer-primary;;
+}
