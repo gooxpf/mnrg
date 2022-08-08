@@ -1,0 +1,100 @@
+html, body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  font-size: var(--font-size-primary);
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: $color-primary;
+  background-color: $color-background-primary;
+  font-family: $font-primary-regular;
+  transition-duration: 100ms;
+}
+
+html, body, #root {
+  height:100%;
+  min-height: 100%;
+}
+
+#root {
+  max-width: 100%;
+}
+
+body, input, textarea, select, button {
+  font-synthesis: none;
+  -moz-font-feature-settings: 'kern';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: $font-primary-bold;
+  margin-bottom: 1.125rem;
+}
+
+h2 {
+  font-family: $font-primary-bold;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  margin-top: 0.75rem;
+  font-family: $font-primary-bold;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-family: $font-primary-bold;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-family: $font-primary-bold;
+  margin-bottom: 0.25rem;
+}
+
+h6 {
+  font-family: $font-primary-bold;
+}
+
+p {
+  margin: 0;
+  font-family: $font-primary-light;
+}
+
+span {
+  font-family: $font-primary-regular;
+}
+
+a, img, a:link, a:visited, a:hover, a:focus, button, input, input:focus, select, select:focus {
+  border: none;
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  filter: none;
+  @include mixAnimationPrimary([color, background-color, opacity]);
+}
+
+button, a {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  background-color: transparent;
+  border: 1px solid;
+}
+
+button:hover, a:hover, a:active {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  background-color: $color-primary-active;
+  border: 1px solid transparent;
+}
+
+* {
+  box-sizing: border-box;
+}

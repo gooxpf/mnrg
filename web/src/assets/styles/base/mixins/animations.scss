@@ -1,0 +1,42 @@
+$primary-animation-time: 0.2s;
+$secondary-animation-time: 0.5s;
+$primary-animation-style: $primary-animation-time ease-in-out;
+$secondary-animation-style: $secondary-animation-time ease-in-out;
+
+@function basicPrimaryAnim($variable) {
+  @return $variable $primary-animation-style;
+}
+
+@function basicSecondaryAnim($variable) {
+  @return $variable $secondary-animation-style;
+}
+
+@mixin mixTransform($y, $deg) {
+  -webkit-transform: translateY($y) rotate($deg);
+  -ms-transform: translateY($y) rotate($deg);
+  -o-transform: translateY($y) rotate($deg);
+  transform: translateY($y) rotate($deg);
+}
+
+@mixin mixAddWebkit($variable) {
+  -webkit-transition: $variable;
+  -moz-transition: $variable;
+  -o-transition: $variable;
+  transition: $variable;
+}
+
+@mixin mixAnimationPrimary($properties) {
+  $animationString: ();
+  @each $property in $properties {
+    $animationString: $animationString , basicPrimaryAnim($property)
+  }
+  @include mixAddWebkit($animationString);
+}
+
+@mixin mixAnimationSecondary($properties) {
+  $animationString: ();
+  @each $property in $properties {
+    $animationString: $animationString , basicSecondaryAnim($property)
+  }
+  @include mixAddWebkit($animationString);
+}
