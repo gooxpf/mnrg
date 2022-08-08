@@ -21,7 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test:all": "yarn run start & yarn run jest:run & yarn run cypress:run",
+    "test:all": "yarn run jest:run && yarn run cypress:run",
     "audit": "yarn audit",
     "audit:fix": "yarn audit fix",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
